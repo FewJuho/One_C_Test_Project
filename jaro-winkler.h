@@ -53,8 +53,8 @@ double jaro_distance(const std::string& str1, const std::string& str2) {
     return 0;
 
   double jd = (static_cast<double>(matches) / len1 +
-      static_cast<double>(matches) / len2 +
-      (static_cast<double>(matches - transpositions) / matches)) / 3.0;
+               static_cast<double>(matches) / len2 +
+               (static_cast<double>(matches - transpositions) / matches)) / 3.0;
 
   return jd;
 }
@@ -86,6 +86,6 @@ double get_file_congruence(std::string str1, std::string str2) {
     std::cout << str_iter << ' ' << min_str << '\n';
     sum_jaro_wink += jaro_winkler_distance(min_str, str_iter);
   }
-  
+
   return sum_jaro_wink / static_cast<double>((count_iters + 1));
 }
